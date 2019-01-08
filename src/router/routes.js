@@ -1,6 +1,5 @@
 import { Route, IndexRoute, IndexRedirect } from "react-router";
 import { Router, hashHistory, browserHistory } from "react-router";
-import cookie from "js-cookie";
 import React from "react";
 
 function onEnter(nextState, replace, callback) {
