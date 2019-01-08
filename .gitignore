@@ -13,3 +13,4 @@ bower_components
 dist*
 _dist*
 dll
+.history
