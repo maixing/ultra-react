@@ -31,10 +31,6 @@ let proConfig = {
     entry: {
         app: ["babel-polyfill", path.resolve(__dirname, "../src/index.js")]
     },
-    resolve: {
-        modules: [path.resolve(__dirname, "../node_modules"), path.resolve(__dirname, "../src"), __dirname],
-        extensions: [".js", ".json", ".jsx", ".css", ".less", ".scss"]
-    },
     node: {
         process: true
     },

@@ -91,10 +91,6 @@ const devConfig = merge(webpackConfig, {
       }
     ]
   },
-  resolve: {
-    modules: [path.resolve(__dirname, "../node_modules"), path.resolve(__dirname, "../src"), __dirname],
-    extensions: [".js", ".json", ".jsx", ".css", ".less", ".scss"]
-  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
