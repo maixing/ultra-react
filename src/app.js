@@ -17,12 +17,12 @@ import "./style/magic.css";
 global.Intl = intl; //解决react intl的ie问题
 promis.polyfill(); //
 addLocaleData(cnLocale.data);
-module.exports = (
-    <IntlProvider locale={cnLocale.locale} messages={cnLocale.messages}>
-        <LocaleProvider>
-            <Provider {...appstore}>
-                <Routes />
-            </Provider>
-        </LocaleProvider>
-    </IntlProvider>
+export default (
+	<IntlProvider locale={cnLocale.locale} messages={cnLocale.messages}>
+		<LocaleProvider>
+			<Provider {...appstore}>
+				<Routes />
+			</Provider>
+		</LocaleProvider>
+	</IntlProvider>
 );
