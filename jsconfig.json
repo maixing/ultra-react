@@ -3,9 +3,12 @@
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["src/*"],
-			"views/*": ["src/view/*"]
+			"views/*": ["src/views/*"],
+			"store/*": ["src/stores/*"],
+			"service/*": ["src/service/*"],
+			"components/*": ["src/components/*"]
 		}
 	},
-    "exclude": ["node_modules", "dist"],
-    "include": ["src"]
+	"exclude": ["node_modules", "dist"],
+	"include": ["src"]
 }

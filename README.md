@@ -61,3 +61,9 @@
 - .babelrc
 - .gitignore
 - package.json
+#### 开发文件引用说明
+- @ 默认应用的是src目录，例如 import "@/util"
+- store 默认是src/stores目录，例如 import "store/MainStore"
+- views 默认是src/views目录，例如 import "views/main"
+- service 默认是src/service，例如 import "service/FacadeConfig"
+- components 默认是src/components，例如 import "components/*"
