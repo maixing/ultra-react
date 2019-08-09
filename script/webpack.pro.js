@@ -17,8 +17,6 @@ let theme                   = themeConfig();
 
 require("babel-polyfill");
 
-theme["@icon-url"] = `"${serverConfig.pro.serverBaseUrl + serverConfig.pro.context + serverConfig.fonts}"`;
-
 let proConfig = {
     devtool: false,
     mode: "production",

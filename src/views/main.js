@@ -5,14 +5,21 @@
  */
 
 import React from "react";
-import {Link} from 'react-router';
-import Home from "views/home";
+import { Link } from "react-router";
 
 import { Layout, Menu, Icon } from "antd";
 const { Header, Sider, Content } = Layout;
 import "views/style.less";
+import { observer, inject } from "mobx-react";
 
+@inject("MainStore")
+@observer
 export default class Main extends React.Component {
+	constructor(props) {
+		super(props);
+		console.log("props---->>%o", this.props);
+		this.mainStroe = this.props.MainStore;
+	}
 	state = {
 		collapsed: false
 	};
@@ -31,17 +38,22 @@ export default class Main extends React.Component {
 					<Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
 						<Menu.Item key="1">
 							<Icon type="home" />
-                     <Link to={'/home'} className="link">首页</Link>
+							<Link to={"/home"} className="link">
+								首页
+							</Link>
 						</Menu.Item>
 						<Menu.Item key="2">
 							<Icon type="bar-chart" />
-                     <Link to={'/chart'} className="link">图表</Link>
+							<Link to={"/chart"} className="link">
+								图表
+							</Link>
 						</Menu.Item>
 					</Menu>
 				</Sider>
 				<Layout>
 					<Header style={{ background: "#fff", padding: 0 }}>
 						<Icon className="trigger" type={this.state.collapsed ? "menu-unfold" : "menu-fold"} onClick={this.toggle} />
+						{this.mainStroe.appName}
 					</Header>
 					<Content
 						style={{

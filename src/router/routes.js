@@ -29,8 +29,8 @@ const routes = [
 						cb(null, require("views/home").default);
 					});
 				}
-            },
-            {
+			},
+			{
 				path: "/chart",
 				onEnter: onEnter,
 				onChange: onChange,

@@ -28,7 +28,10 @@ module.exports = {
 		extensions: [".js", ".json", ".jsx", ".css", ".less"],
 		alias: {
 			"@": resolve("src"),
-			"views":resolve("src/view")
+			"views":resolve("src/views"),
+			"store":resolve("src/stores"),
+			"service":resolve("src/service"),
+			"components":resolve("src/components")
 		}
 	},
 	plugins: [
