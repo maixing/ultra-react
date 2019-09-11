@@ -10,8 +10,7 @@ let BundleAnalyzerPlugin    = require("webpack-bundle-analyzer").BundleAnalyzerP
 let ParallelUglifyPlugin    = require("webpack-parallel-uglify-plugin");
 let MiniCssExtractPlugin    = require("mini-css-extract-plugin");
 let OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-let UglifyJsPlugin          = require("uglifyjs-webpack-plugin");
-let serverConfig            = require("../resource/serverconfig/server.json");
+let TerserPlugin            = require("terser-webpack-plugin");
 let themeConfig             = require("../src/theme.js");
 let theme                   = themeConfig();
 
@@ -162,9 +161,9 @@ let proConfig = {
             }
         },
         minimizer: [
-            new UglifyJsPlugin({
+            new TerserPlugin({
                 parallel: 10,
-                uglifyOptions: {
+                terserOptions: {
                     ie8: true,
                     warnings: true,
                     output: {
