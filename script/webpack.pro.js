@@ -112,12 +112,18 @@ let proConfig = {
                 ]
             },
             {
-                test: /\.(ttf|eot|svg|woff|woff2)$/,
+                test: /\.(ttf|eot|woff|woff2)$/,
                 use: [
-                    {
-                        loader: 'file-loader?name=fonts/[name].[ext]' // creates style nodes from JS strings
-                    }
-                ]
+					{
+						loader: "url-loader",
+						options: {
+							name: "[name]-[hash:5].min.[ext]",
+							limit: 5000,
+							publicPath: "fonts/",
+							outputPath: "fonts/"
+						}
+					}
+				]
             }
         ]
     },

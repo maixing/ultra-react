@@ -86,8 +86,18 @@ const devConfig = merge(webpackConfig, {
         }]
       },
       {
-        test: /\.(ttf|eot|svg|woff|woff2)$/,
-        use: 'happypack/loader?id=font'
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: [
+					{
+						loader: "url-loader",
+						options: {
+							name: "[name]-[hash:5].min.[ext]",
+							limit: 5000,
+							publicPath: "fonts/",
+							outputPath: "fonts/"
+						}
+					}
+				]
       }
     ]
   },
