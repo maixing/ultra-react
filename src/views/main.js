@@ -53,7 +53,7 @@ export default class Main extends React.Component {
 				<Layout>
 					<Header style={{ background: "#fff", padding: 0 }}>
 						<Icon className="trigger" type={this.state.collapsed ? "menu-unfold" : "menu-fold"} onClick={this.toggle} />
-						<span className="title">{this.mainStroe.appName}</span>
+						<span className="title">{this.mainStroe.appName}2020</span>
 					</Header>
 					<Content
 						style={{
