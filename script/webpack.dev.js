@@ -53,7 +53,7 @@ const devConfig = merge(webpackConfig, {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx|js$/,
         exclude: /node_modules/,
         use: 'happypack/loader?id=js'
       },
