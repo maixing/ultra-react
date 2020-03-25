@@ -1,23 +1,22 @@
 /**
- *
- * Created by maixing on 2019/08/07 17:29:37
- *
- */
-
+* 
+* Created by maixing on 2020/03/25 14:20:47
+*
+*/
 import React from "react";
 import { Link } from "react-router";
-
-import { Layout, Menu, Icon } from "antd";
-const { Header, Sider, Content } = Layout;
+import { MenuUnfoldOutlined, MenuFoldOutlined, HomeOutlined, AreaChartOutlined } from "@ant-design/icons";
+import { Layout, Menu } from "antd";
 import "views/style.less";
 import { observer, inject } from "mobx-react";
+
+const { Header, Sider, Content } = Layout;
 
 @inject("MainStore")
 @observer
 export default class Main extends React.Component {
 	constructor(props) {
 		super(props);
-		console.log("props---->>%o", this.props);
 		this.mainStroe = this.props.MainStore;
 	}
 	state = {
@@ -37,22 +36,25 @@ export default class Main extends React.Component {
 					<div className="logo" />
 					<Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
 						<Menu.Item key="1">
-							<Icon type="home" />
 							<Link to={"/home"} className="link">
-								首页
+								<HomeOutlined />
+								<span> 首页</span>
 							</Link>
 						</Menu.Item>
 						<Menu.Item key="2">
-							<Icon type="bar-chart" />
-							<Link to={"/chart"} className="link">
-								图表
+							<Link to={"/chart"} className="chart">
+								<AreaChartOutlined />
+								<span>图表</span>
 							</Link>
 						</Menu.Item>
 					</Menu>
 				</Sider>
 				<Layout>
 					<Header style={{ background: "#fff", padding: 0 }}>
-						<Icon className="trigger" type={this.state.collapsed ? "menu-unfold" : "menu-fold"} onClick={this.toggle} />
+						{React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+							className: "trigger",
+							onClick: this.toggle
+						})}
 						<span className="title testtheme1">{this.mainStroe.appName}2020</span>
 					</Header>
 					<Content

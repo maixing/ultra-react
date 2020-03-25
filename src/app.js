@@ -1,5 +1,5 @@
 import { addLocaleData, IntlProvider } from "react-intl";
-import { LocaleProvider } from "antd";
+import { ConfigProvider } from 'antd';
 import { Provider } from "mobx-react";
 import intl from "intl";
 import promis from "es6-promise";
@@ -19,10 +19,10 @@ promis.polyfill(); //
 addLocaleData(cnLocale.data);
 export default (
 	<IntlProvider locale={cnLocale.locale} messages={cnLocale.messages}>
-		<LocaleProvider>
+		<ConfigProvider>
 			<Provider {...appstore}>
 				<Routes />
 			</Provider>
-		</LocaleProvider>
+		</ConfigProvider>
 	</IntlProvider>
 );
