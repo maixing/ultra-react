@@ -10,7 +10,8 @@ const updateTheme = primaryColor => {
 		setTimeout(() => {
 			window.less
 				.modifyVars({
-					"@primary-color": primaryColor
+					"@primary-color": primaryColor,
+					"@homebackcolor":primaryColor
 				})
 				.then(() => {})
 				.catch(e => {

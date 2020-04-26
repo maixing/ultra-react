@@ -70,6 +70,7 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
+    "animate.css": "^3.7.2",
     "antd": "^4.0.4",
     "aphrodite": "^2.2.1",
     "axios": "^0.19.2",
