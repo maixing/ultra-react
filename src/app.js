@@ -5,7 +5,7 @@ import intl from "intl";
 import promis from "es6-promise";
 import React from "react";
 
-import "antd/dist/antd.less";
+import 'antd/dist/antd.css';
 import "font-awesome/css/font-awesome.min.css";
 import appstore from "./stores/AppStore";
 import cnLocale from "./local/zh-CN";
